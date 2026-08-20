@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/sncr_ccir-mcp",
+  "title": "SNCR: Emissão do Certificado de Cadastro do Imóvel Rural (CCIR)",
+  "description": "SNCR: Issuance do Certificado de Cadastro do Imóvel Rural (CCIR), official-source lookup. Platform-h",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/sncr_ccir-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_sncr_ccir"
+    }
+  ]
+}

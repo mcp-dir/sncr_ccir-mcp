@@ -1,0 +1,33 @@
+# Smithery configuration for SNCR: Emissão do Certificado de Cadastro do Imóvel Rural (CCIR)
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_sncr_ccir
+
+name: sncr_ccir-mcp
+displayName: "SNCR: Emissão do Certificado de Cadastro do Imóvel Rural (CCIR)"
+description: >
+  SNCR: Emissão do Certificado de Cadastro do Imóvel Rural (CCIR), consulta em fonte oficial. Hospedado pela plataforma, sem credenciais da plataforma, pague por consulta com crédito pré-pago.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/sncr_ccir-mcp
+repository: https://github.com/mcp-dir/sncr_ccir-mcp
+
+tags:
+  - sncr_ccir
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_sncr_ccir
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_sncr_ccir/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
